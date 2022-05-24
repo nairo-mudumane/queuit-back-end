@@ -1,0 +1,9 @@
+{
+  "name": "queuit-back-end",
+  "version": "0.0.0",
+  "description": "QueuIt is a queuing system for supermarkets, stores, bakeries, among other commercial establishments",
+  "main": "index.js",
+  "repository": "git@github.com:nairo-mudumane/queuit-back-end.git",
+  "author": "nairo-mudumane <nairomudumane@outlook.com>",
+  "license": "MIT"
+}
