@@ -8,4 +8,6 @@ export interface IInternalUser {
     role: "admin" | "employee" | "customer";
 }
 
+export type IRequestUser = IInternalUser;
+
 export interface IUser extends Omit<IInternalUser, "cert" | "office"> {}

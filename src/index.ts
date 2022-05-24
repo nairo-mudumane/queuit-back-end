@@ -7,7 +7,6 @@ const HOSTNAME = process.env.HOSTNAME || "http://localhost";
 const app = express();
 
 app.use(cors());
-
 mainRoutes(app);
 
 app.listen(PORT, () => console.log(`server running at ${HOSTNAME}:${PORT}`));

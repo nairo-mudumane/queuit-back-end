@@ -1,9 +1,12 @@
-import { Express } from "express";
-import { ENDPOINTS, firestore as db } from "../../config";
+import express, { Express } from "express";
+import { ENDPOINTS } from "../../config";
+import { createUser } from "../controllers";
+
+const router = express.Router();
 
 export function mainRoutes(app: Express) {
     // users
-    app.post(ENDPOINTS.users.admin, (req, res) => {
-        res.send("admin post");
-    });
+    app.route("/register").post(createUser);
+
+    // app.post(ENDPOINTS.users.admin, createUser);
 }
