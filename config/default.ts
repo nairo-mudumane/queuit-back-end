@@ -1,3 +1,3 @@
-export default {
-    port: 4444,
+export const baseUrl = {
+    v1: "/api/v1",
 };

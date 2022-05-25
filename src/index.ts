@@ -9,6 +9,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.listen(PORT, () => {
-    log.info(`server running at: http://localhost:${PORT}`);
+    log.info(`http://localhost:${PORT}`);
     routes(app);
 });
