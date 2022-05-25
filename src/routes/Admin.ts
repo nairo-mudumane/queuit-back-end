@@ -1,16 +1,9 @@
-import { Express, Request, Response } from "express";
-import { log } from "../logger";
+import { Express } from "express";
 import { baseUrl } from "../../config";
 import Default from "./Default";
+import { Admin } from "../controllers";
 
 export default function (app: Express) {
-    app.post(`${baseUrl.v1}/admin/new`, (req: Request, res: Response) => {
-        const payload = req.body;
-
-        log.info(payload);
-
-        return res.send("admin route");
-    });
-
+    app.post(`${baseUrl.v1}`, Admin.createAdmin);
     Default(app);
 }
