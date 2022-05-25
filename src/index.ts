@@ -1,12 +1,11 @@
 import express from "express";
-import cors from "cors";
-import { mainRoutes } from "./routes";
 
-const PORT = process.env.PORT || 4000;
-const HOSTNAME = process.env.HOSTNAME || "http://localhost";
+const PORT = process.env.PORT || 3131;
 const app = express();
 
-app.use(cors());
-mainRoutes(app);
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-app.listen(PORT, () => console.log(`server running at ${HOSTNAME}:${PORT}`));
+app.listen(PORT, () =>
+    console.log(`server running at: http://localhost:${PORT}`)
+);
