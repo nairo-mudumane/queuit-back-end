@@ -6,8 +6,9 @@
     "repository": "git@github.com:nairo-mudumane/queuit-back-end.git",
     "author": "nairo-mudumane <nairomudumane@outlook.com>",
     "license": "MIT",
+    "type": "module",
     "scripts": {
-        "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/index.ts\"",
+        "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"node ./src/index.ts\"",
         "build": "tsc",
         "start": "node ./dist/src/index.js"
     },

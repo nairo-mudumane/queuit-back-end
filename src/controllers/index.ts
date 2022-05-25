@@ -1,1 +1,5 @@
-export * from "./User";
+import { createAdmin } from "./Admin";
+
+export const AdminController = {
+    createAdmin,
+};
