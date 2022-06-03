@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { log } from "../logger";
 
 export function logger(req: Request, res: Response, next: NextFunction) {
+    log.warn(`${req.method} ${req.path}`);
     log.info(`host: ${req.hostname}`);
     log.info(`path: ${req.path}`);
     log.info(`method: ${req.method}`);
