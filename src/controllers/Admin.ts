@@ -12,13 +12,18 @@ async function create(
 ) {
     logger(request, response, next);
     const payload = request.body as IAdmin;
-    adminModel.create(payload);
-
-    return response
-        .status(200)
-        .json(
-            clientResponse({ error: false, message: "success", data: payload })
-        );
+    return await adminModel
+        .create(payload)
+        .then(() => {
+            return response
+                .status(201)
+                .json(clientResponse({ error: false, message: "created" }));
+        })
+        .catch((err: Error) => {
+            return response
+                .status(500)
+                .json(clientResponse({ error: true, message: err.message }));
+        });
 }
 
 export const AdminController = {
