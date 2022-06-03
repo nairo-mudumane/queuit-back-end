@@ -1,13 +1,7 @@
-export interface IInternalUser {
-    id: string;
+export interface IAdmin {
+    uid: string;
+    name: string;
     email: string;
     password: string;
-    name: string;
-    cert: string;
-    office: string;
-    role: "admin" | "employee" | "customer";
+    createdAt?: Date;
 }
-
-export type IRequestUser = IInternalUser;
-
-export interface IUser extends Omit<IInternalUser, "cert" | "office"> {}

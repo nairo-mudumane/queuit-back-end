@@ -1,9 +1,7 @@
 import { Express } from "express";
 import { baseUrl } from "../../config";
-import Default from "./Default";
-import { Admin } from "../controllers";
+import { AdminController } from "../controllers";
 
 export default function (app: Express) {
-    app.post(`${baseUrl.v1}`, Admin.createAdmin);
-    Default(app);
+    app.post(`${baseUrl.v1}/admin/new/`, AdminController.create);
 }
