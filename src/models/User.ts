@@ -49,4 +49,20 @@ export class UserModel {
             throw new Error(error.message);
         }
     }
+
+    async update(payload: IUser) {
+        try {
+            await db
+                .collection(this.USER_REF)
+                .doc(payload.uid)
+                .update(payload)
+                .then((records) => {
+                    consoleLogger(records);
+                    return records;
+                });
+        } catch (error: any) {
+            consoleLogger(error);
+            throw new Error(error.message);
+        }
+    }
 }
