@@ -9,6 +9,7 @@ export class AdminModel {
     async create(payload: IAdmin) {
         payload["uid"] = generateId(32);
         payload["role"] = "admin";
+        payload["office"] = "Admin";
 
         try {
             await db

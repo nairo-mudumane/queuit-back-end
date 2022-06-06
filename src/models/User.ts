@@ -33,15 +33,14 @@ export class UserModel {
                 .get()
                 .then((records) => {
                     const allResults = [] as IUser[];
-                    const results = [] as IUser[];
                     consoleLogger("Google response");
                     consoleLogger(records);
                     records.forEach((record) => {
                         allResults.push(record.data() as IUser);
                     });
-                    allResults.filter((user) => {
-                        return user.role !== "admin";
-                    });
+                    const results = allResults.filter(
+                        (user) => user.role !== "admin"
+                    );
                     return results;
                 });
             return response;
